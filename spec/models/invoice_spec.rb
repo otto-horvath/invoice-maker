@@ -7,5 +7,7 @@ RSpec.describe Invoice, type: :model do
     before { invoice.valid? }
 
     it { expect(invoice).to_not be_valid }
+    it { expect(invoice.errors[:number]).to be_present }
+    it { expect(invoice.errors[:total_value]).to be_present }
   end
 end
